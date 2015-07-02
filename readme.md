@@ -18,8 +18,8 @@ This is a working progress Electron application that serve as [HackerNews](https
 
 #### To run the app
 
-(considering Electron package inside node_modules
-
 ```bash
 node_modules/.bin/electron .
 ```
+
+(considering Electron package inside node_modules)
