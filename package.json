@@ -2,6 +2,13 @@
   "name": "ElectroHacker",
   "description": "Hacker News Client for testing GitHub Electron",
   "version": "0.1.0",
+  "author": {
+    "name": "Alessio Vertemati",
+    "email": "alessio.vertemati@gmail.com",
+    "url": "https://github.com/avvertix"
+  },
+  "repository": "avvertix/electrohacker",
+  "license": "MIT",
   "main": "main.js",
   "dependencies": {
     "ity": "*",
