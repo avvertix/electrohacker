@@ -28,8 +28,16 @@ node_modules/.bin/electron .
 
 #### To Build the app
 
-the build script supports only MacOs for now
+the build script supports only MacOS and Windows for now
+
+To create the packaged application on MacOS run
 
 ```bash
-npm run build
+npm run build-mac
+```
+
+while on Windows run
+
+```bash
+npm run build-win
 ```
