@@ -23,3 +23,13 @@ node_modules/.bin/electron .
 ```
 
 (considering Electron package inside node_modules)
+
+
+
+#### To Build the app
+
+the build script supports only MacOs for now
+
+```bash
+npm run build
+```

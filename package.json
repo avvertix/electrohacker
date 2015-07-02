@@ -1,5 +1,5 @@
 {
-  "name": "EletroHacker",
+  "name": "ElectroHacker",
   "description": "Hacker News Client for testing GitHub Electron",
   "version": "0.1.0",
   "main": "main.js",
@@ -11,6 +11,10 @@
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
     "gulp-concat": "~2.5.2",
-    "gulp-minify-css": "~1.1.1"
+    "gulp-minify-css": "~1.1.1",
+    "electron-packager": "^5.0.0"
+  },
+  "scripts": {
+    "build": "electron-packager ./ ElectroHacker --platform=darwin --arch=x64 --version=0.28.2 --out=build"
   }
 }

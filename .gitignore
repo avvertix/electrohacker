@@ -78,3 +78,7 @@ $RECYCLE.BIN/
 # Visual Studio Code related
 .settings
 typings
+
+
+# Builds
+build
