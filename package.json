@@ -22,6 +22,7 @@
     "electron-packager": "^5.0.0"
   },
   "scripts": {
-    "build": "electron-packager ./ ElectroHacker --platform=darwin --arch=x64 --version=0.28.2 --out=build"
+    "build-mac": "electron-packager ./ ElectroHacker --platform=darwin --arch=x64 --version=0.28.2 --out=build",
+    "build-win": "electron-packager ./ ElectroHacker --platform=win32 --arch=x64 --version=0.28.2 --out=build"
   }
 }
