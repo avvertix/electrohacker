@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ElectroHacker</title>
+  </head>
+  <link rel="stylesheet" href="./css/style.css">
+  <body>
+    
+    <header class="header">
+      <div class="container">
+        Electro<strong>Hacker</strong>
+        
+        
+        <div class="actions">
+          <a href="#">Reload</a>
+        </div>
+      </div>
+      
+      
+    </header>
+    
+    <div class="container page" id="list">
+      Loading...
+    </div>
+    
+    <footer class="footer">
+      <div class="container">
+        HackerNews client on top of Electron  
+      </div>
+      
+    </footer>
+    
+    <p>
+      
+    </p>
+
+    <script>
+      var _ = require('lodash');
+      var shell = require('shell');
+    </script>
+    <script src="./src/zepto.min.js"></script>
+    <script src="./src/hackernews.js"></script>
+    <script>
+      
+      var compiled = _.template('<% _.forEach(items, function(item) { %><article><a href="<%- item.url %>"><%- item.title %></a><span><%- item.type %>, by <%- item.by %>, <%- item.score %> points, <%- item.descendants %> comments</span></article><% }); %>');
+      
+      var _collection = {items: []};
+      
+      var place = $("#list");
+      
+      place.on('click', 'a', function(evt){
+        console.info(evt);
+        
+        console.info(evt.target.href);
+        
+        if(evt.target.href && evt.target.href.length > 0){
+          shell.openExternal(evt.target.href);
+        }
+        else {
+          alert('Empty URL');
+        }
+        
+        evt.preventDefault();
+        evt.stopPropagation();
+      });
+      
+      $(document.body).on('hn:item', function(evt, data){
+        console.log(evt, data);
+        
+        _collection.items.push(data);
+        
+        place.html(compiled(_collection));
+      });
+      
+      
+      HN.top(function(remoteData){
+        
+        
+        console.log(remoteData);
+        
+        
+      });
+      
+      // console.log(hn.getItem(8863));
+      // 
+      // console.log(hn.getTopStories());
+    </script>
+  </body>
+</html>

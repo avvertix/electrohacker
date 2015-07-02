@@ -1,0 +1,67 @@
+
+
+@color: #ff6600;
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: block;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.header {
+	
+	padding: 12px 0;
+	background-color: @color;
+	color: #fff;
+	
+	box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+	
+	margin-bottom: 12px;
+	
+	position: fixed;
+	width: 100%;
+	will-change:opacity;
+}
+
+.footer {
+	color: #808080;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+
+.page {
+	padding: 54px 0;
+	
+	a {
+		display: block;
+		font-size: 18px;
+		
+		&:visited {
+			opacity: 0.8;
+		}
+		
+		&:hover {
+			opacity: 1;
+		}
+	}
+	
+	span {
+		color: lighten(#000, 20%);
+	}
+	
+	article {
+		margin-bottom: 12px;
+	}
+}
+
+.actions {
+	float: right;
+}
