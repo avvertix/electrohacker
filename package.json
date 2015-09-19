@@ -1,13 +1,16 @@
 {
   "name": "ElectroHacker",
   "description": "Hacker News Client for testing GitHub Electron",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Alessio Vertemati",
     "email": "alessio.vertemati@gmail.com",
     "url": "https://github.com/avvertix"
   },
-  "repository": "avvertix/electrohacker",
+  "repository": {
+    "type": "git",
+    "url": "avvertix/electrohacker"
+  },
   "license": "MIT",
   "main": "main.js",
   "dependencies": {
@@ -19,7 +22,8 @@
     "gulp-less": "^3.0.3",
     "gulp-concat": "~2.5.2",
     "gulp-minify-css": "~1.1.1",
-    "electron-packager": "^5.0.0"
+    "electron-packager": "^5.1.0",
+    "electron-prebuilt": "~0.33.0"
   },
   "scripts": {
     "build-mac": "electron-packager ./ ElectroHacker --platform=darwin --arch=x64 --version=0.28.2 --out=build",
