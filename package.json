@@ -1,10 +1,10 @@
 {
   "name": "ElectroHacker",
   "description": "Hacker News Client for testing GitHub Electron",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Alessio Vertemati",
-    "email": "alessio.vertemati@gmail.com",
+    "email": "alessio@avsoft.it",
     "url": "https://github.com/avvertix"
   },
   "repository": {
@@ -15,19 +15,20 @@
   "main": "main.js",
   "dependencies": {
     "ity": "*",
-    "lodash": "*"
+    "lodash": "^4.5.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-less": "^3.0.3",
-    "gulp-concat": "~2.5.2",
-    "gulp-minify-css": "~1.1.1",
-    "electron-packager": "^5.1.0",
-    "electron-prebuilt": "~0.33.0"
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.3",
+    "electron-packager": "^5.2.1",
+    "electron-prebuilt": "~0.36.8"
   },
   "scripts": {
-    "build-mac": "electron-packager ./ ElectroHacker --platform=darwin --arch=x64 --version=0.28.2 --out=build",
-    "build-win": "electron-packager ./ ElectroHacker --platform=win32 --arch=x64 --version=0.28.2 --out=build",
-    "build-nix": "electron-packager ./ ElectroHacker --platform=linux --arch=x64 --version=0.28.2 --out=build"
+    "start": "electron main.js",
+    "build-mac": "electron-packager ./ ElectroHacker --platform=darwin --arch=x64 --version=0.36.8 --out=build",
+    "build-win": "electron-packager ./ ElectroHacker --platform=win32 --arch=x64 --version=0.36.8 --out=build",
+    "build-nix": "electron-packager ./ ElectroHacker --platform=linux --arch=x64 --version=0.36.8 --out=build"
   }
 }

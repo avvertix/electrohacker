@@ -19,10 +19,9 @@ This is a working progress Electron application that serve as [HackerNews](https
 #### To run the app
 
 ```bash
-node_modules/.bin/electron .
+npm install
+npm run start
 ```
-
-(considering Electron package inside node_modules)
 
 
 
