@@ -13,7 +13,7 @@
         
         
         <div class="col actions">
-          <a href="#reload" class="action">Reload</a>
+          <a href="#reload" id="reload" class="action">Reload</a>
         </div>
       </div>
       
@@ -45,6 +45,15 @@
       
       var place = $("#list");
       
+      $('#reload').on('click', function(evt){
+          
+          _collection.items = [];
+        
+         place.html('<div class="col col--12">Refreshing...</div>');
+          
+          refresh();
+      });
+      
       place.on('click', 'a', function(evt){
         console.info(evt);
         
@@ -70,13 +79,18 @@
       });
       
       
-      HN.top(function(remoteData){
-        
-        
-        console.log(remoteData);
-        
-        
-      });
+      function refresh(){
+          HN.top(function(remoteData){
+            
+            
+            console.log(remoteData);
+            
+            
+        });
+      }
+      
+      refresh();
+      
       
       // console.log(hn.getItem(8863));
       // 
