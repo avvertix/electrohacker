@@ -1,9 +1,16 @@
 /// <reference path="typings/node/node.d.ts"/>
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+const crashReporter = require('electron').crashReporter;
+
 
 // Report crashes to our server.
-require('crash-reporter').start();
+crashReporter.start({
+  productName: 'ElectroHacker',
+  companyName: 'AVSoft',
+  submitURL: 'https://avsoft.it/electrohacker-crash',
+  autoSubmit: false
+});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the javascript object is GCed.
@@ -22,10 +29,16 @@ app.on('window-all-closed', function() {
 // initialization and ready for creating browser windows.
 app.on('ready', function() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600, icon: 'images/logo.png'});
+  mainWindow = new BrowserWindow({
+      width: 800, 
+      height: 600, 
+      minWidth: 420,
+      minHeight: 400,
+      icon: 'images/logo.png'
+  });
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
   
   // app.addRecentDocument('C:/ciao.txt');
 
