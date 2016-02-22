@@ -39,7 +39,7 @@
     <script src="./src/hackernews.js"></script>
     <script>
       
-      var compiled = _.template('<% _.forEach(items, function(item) { %><article  class="col col--12"><div class="flex"><a class="col col--12" href="<%- item.url %>"><%- item.title %></a><span class="col col--12" ><%- item.type %>, by <%- item.by %>, <%- item.score %> points, <%- item.descendants %> comments</span></div></article><% }); %>');
+      var compiled = _.template('<% _.forEach(items, function(item) { %><article  class="col col--12"><div class="flex"><a class="col" href="<%- item.url %>"><%- item.title %></a><span class="col col--12" ><%- item.type %>, by <%- item.by %>, <%- item.score %> points, <%- item.descendants %> comments</span></div></article><% }); %>');
       
       var _collection = {items: []};
       
