@@ -6,33 +6,30 @@
   <link rel="stylesheet" href="./css/style.css">
   <body>
     
-    <header class="header">
-      <div class="container">
-        Electro<strong>Hacker</strong>
+    <header class="header ">
+      <div class="container flex flex--between">
+          
+        <div class="col title">Electro<strong>Hacker</strong></div>
         
         
-        <div class="actions">
-          <a href="#">Reload</a>
+        <div class="col actions">
+          <a href="#reload" class="action">Reload</a>
         </div>
       </div>
       
       
     </header>
     
-    <div class="container page" id="list">
-      Loading...
+    <div class="container page flex" id="list">
+      <div class="col col--12">Loading...</div>
     </div>
     
-    <footer class="footer">
-      <div class="container">
+    <footer class="footer container flex">
+      <div class="col col--12">
         HackerNews client on top of Electron  
       </div>
       
     </footer>
-    
-    <p>
-      
-    </p>
 
     <script>
       var _ = require('lodash');
@@ -42,7 +39,7 @@
     <script src="./src/hackernews.js"></script>
     <script>
       
-      var compiled = _.template('<% _.forEach(items, function(item) { %><article><a href="<%- item.url %>"><%- item.title %></a><span><%- item.type %>, by <%- item.by %>, <%- item.score %> points, <%- item.descendants %> comments</span></article><% }); %>');
+      var compiled = _.template('<% _.forEach(items, function(item) { %><article  class="col col--12"><div class="flex"><a class="col col--12" href="<%- item.url %>"><%- item.title %></a><span class="col col--12" ><%- item.type %>, by <%- item.by %>, <%- item.score %> points, <%- item.descendants %> comments</span></div></article><% }); %>');
       
       var _collection = {items: []};
       

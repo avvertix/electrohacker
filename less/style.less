@@ -1,17 +1,13 @@
 
 
+@import (less) "../node_modules/Pintsize/dist/pintsize.css";
+
 @color: #ff6600;
 
 body {
 	font-family: sans-serif;
 	margin: 0;
 	padding: 0;
-}
-
-.container {
-	display: block;
-	max-width: 960px;
-	margin: 0 auto;
 }
 
 .header {
@@ -31,9 +27,9 @@ body {
 
 .footer {
 	color: #808080;
-	position: fixed;
 	bottom: 0;
 	width: 100%;
+    padding-bottom: 12px;
 }
 
 
@@ -41,7 +37,7 @@ body {
 	padding: 54px 0;
 	
 	a {
-		display: block;
+		display: inline-block;
 		font-size: 18px;
 		
 		&:visited {
@@ -63,5 +59,15 @@ body {
 }
 
 .actions {
-	float: right;
+	// float: right;
+    
+    
+    .action {
+        color: #fff;
+        padding: 5px;
+        
+        &:hover, &:active, &:focus {
+            background: darken(@color, 10%);
+        }
+    }
 }

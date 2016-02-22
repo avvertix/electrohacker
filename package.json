@@ -15,7 +15,8 @@
   "main": "main.js",
   "dependencies": {
     "ity": "*",
-    "lodash": "^4.5.0"
+    "lodash": "^4.5.0",
+    "pintsize": "alistairtweedie/pintsize"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
