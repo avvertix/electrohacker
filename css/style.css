@@ -484,6 +484,7 @@ body {
 }
 .page article {
   margin-bottom: 12px;
+  padding: 0;
 }
 .actions .action {
   color: #fff;
