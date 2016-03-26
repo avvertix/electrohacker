@@ -1,7 +1,8 @@
 {
-  "name": "ElectroHacker",
+  "name": "electrohacker",
+  "productName": "ElectroHacker",
   "description": "Hacker News Client for testing GitHub Electron",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": {
     "name": "Alessio Vertemati",
     "email": "alessio@avsoft.it",
@@ -28,8 +29,11 @@
   },
   "scripts": {
     "start": "electron main.js",
-    "build-mac": "electron-packager ./ ElectroHacker --platform=darwin --arch=x64 --version=0.36.8 --out=build",
-    "build-win": "electron-packager ./ ElectroHacker --platform=win32 --arch=x64 --version=0.36.8 --out=build",
-    "build-nix": "electron-packager ./ ElectroHacker --platform=linux --arch=x64 --version=0.36.8 --out=build"
-  }
+    "build": "npm run build-osx && npm run build-linux && npm run build-windows",
+    "build-osx": "electron-packager . $npm_package_productName --overwrite --out=dist --ignore='^/dist$' --ignore='^/less$' --prune --platform=darwin --arch=x64 --app-bundle-id=com.avvertix.electrohacker  --app-version=$npm_package_version --version=$npm_package_electronVersion && cd dist/Caprine-darwin-x64 && zip -ryXq9 ../Caprine-osx-${npm_package_version}.zip Caprine.app",
+    "build-linux": "electron-packager . $npm_package_productName --overwrite --out=dist --ignore='^/dist$' --ignore='^/less$' --prune --platform=linux --arch=x64 --app-bundle-id=com.avvertix.electrohacker  --app-version=$npm_package_version --version=$npm_package_electronVersion && cd dist/Caprine-linux-x64/ && zip -ryq9 ../Caprine-linux-\"$npm_package_version\".zip *",
+    "build-windows": "electron-packager . $npm_package_productName --overwrite --out=dist --ignore='^/dist$' --ignore='^/less$' --prune --platform=win32 --arch=x64 --version=$npm_package_electronVersion --version-string.ProductName=$npm_package_productName --version-string.ProductVersion=$npm_package_electronVersion  && cd dist/Caprine-win32-ia32/ && zip -ryq9 ../Caprine-windows-\"$npm_package_version\".zip *",
+    "build-win-on-win": "electron-packager . %npm_package_productName% --overwrite --out=dist --ignore='^/dist$' --ignore='^/less$' --prune --platform=win32 --arch=x64 --version=%npm_package_electronVersion% --version-string.ProductName=%npm_package_productName% --version-string.ProductVersion=%npm_package_electronVersion% --app-version=%npm_package_electronVersion%"
+  },
+  "electronVersion": "0.36.2"
 }
