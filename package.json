@@ -29,6 +29,7 @@
   },
   "scripts": {
     "start": "electron main.js",
+    "test": "tests/run.js",
     "build": "npm run build-osx && npm run build-linux && npm run build-windows",
     "build-osx": "electron-packager . $npm_package_productName --overwrite --out=dist --ignore='^/dist$' --ignore='^/less$' --prune --platform=darwin --arch=x64 --app-bundle-id=com.avvertix.electrohacker  --app-version=$npm_package_version --version=$npm_package_electronVersion && cd dist/Caprine-darwin-x64 && zip -ryXq9 ../Caprine-osx-${npm_package_version}.zip Caprine.app",
     "build-linux": "electron-packager . $npm_package_productName --overwrite --out=dist --ignore='^/dist$' --ignore='^/less$' --prune --platform=linux --arch=x64 --app-bundle-id=com.avvertix.electrohacker  --app-version=$npm_package_version --version=$npm_package_electronVersion && cd dist/Caprine-linux-x64/ && zip -ryq9 ../Caprine-linux-\"$npm_package_version\".zip *",
