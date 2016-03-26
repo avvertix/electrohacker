@@ -15,8 +15,7 @@ install:
   - travis_retry npm install
 
 script:
-  - chmod +x tests/run.js 
-  - npm test
+  - npm run build-linux
 
 notifications:
   email:
