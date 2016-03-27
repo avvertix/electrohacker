@@ -2,7 +2,7 @@
   "name": "electrohacker",
   "productName": "ElectroHacker",
   "description": "Hacker News Client for testing GitHub Electron",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "Alessio Vertemati",
     "email": "alessio@avsoft.it",

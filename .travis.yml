@@ -11,10 +11,6 @@ addons:
     packages:
     - wine
 
-branches:
-  only:
-    - master
-
 install:
   - travis_retry npm install
 
