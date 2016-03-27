@@ -15,7 +15,9 @@ install:
   - travis_retry npm install
 
 script:
-  - npm run build-linux
+  - npm run build
+  - ls
+  - ls ./dist
 
 notifications:
   email:
@@ -24,8 +26,11 @@ notifications:
 
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD"
+  api_key: "${GITHUB_OAUTH}"
+  file: 
+    - "ElectroHacker-osx-${TRAVIS_TAG}.zip"
+    - "ElectroHacker-linux-${TRAVIS_TAG}.zip"
+    - "ElectroHacker-windows-${TRAVIS_TAG}.zip"
   skip_cleanup: true
   on:
     tags: true
