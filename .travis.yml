@@ -11,26 +11,29 @@ addons:
     packages:
     - wine
 
+branches:
+  only:
+    - master
+
 install:
   - travis_retry npm install
 
 script:
-  - npm run build
   - ls
-  - ls ./dist
 
 notifications:
   email:
     on_success: never
 
+before_deploy: npm run build
 
 deploy:
   provider: releases
   api_key: "${GITHUB_OAUTH}"
   file: 
-    - "ElectroHacker-osx-${TRAVIS_TAG}.zip"
-    - "ElectroHacker-linux-${TRAVIS_TAG}.zip"
-    - "ElectroHacker-windows-${TRAVIS_TAG}.zip"
+    - "dist/ElectroHacker-osx-${TRAVIS_TAG}.zip"
+    - "dist/ElectroHacker-linux-${TRAVIS_TAG}.zip"
+    - "dist/ElectroHacker-windows-${TRAVIS_TAG}.zip"
   skip_cleanup: true
   on:
     tags: true
